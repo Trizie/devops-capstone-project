@@ -139,3 +139,14 @@ class TestAccountService(TestCase):
         """
         resp = self.client.get(f"{BASE_URL}/0")
         self.assertEqual(resp.status_code, status.HTTP_404_NOT_FOUND)
+    
+    def test_update_account(self):
+        """It should update an existing account"""
+        #create an account
+        test_account = self._create_accounts(1)[0]
+        self.assertEqual(test_account.status_code, status.HTTP_201_CREATED)
+
+        #update the account
+        new
+    
+
