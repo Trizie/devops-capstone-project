@@ -117,7 +117,7 @@ def delete_account(account_id):
 
     account.delete()
 
-    return "", stauts.HTTP_204_NO_CONTENT
+    return "", status.HTTP_204_NO_CONTENT
 
 
 
