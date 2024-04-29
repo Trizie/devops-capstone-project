@@ -157,12 +157,7 @@ class TestAccountService(TestCase):
     
     def delete_account(self):
         """It should delete an existing account"""
-        #create an account to delete
-        test_account = AccountFactory()
-        resp = self.client.post(BASE_URL, json=test_account.serialize())
-        self.assertEqual(resp.status_code, status.HTTP_201_CREATED)
-
-        #delete the account
-        resp = self.client.delete(f"{BASE_URL}/{test_account['id']}")
+        account = self._create_accounts(1)[0]
+        resp = self.client.delete(f"{BASE_URL}/{account.id}")
         self.assertEqual(resp.status_code, status.HTTP_204_NO_CONTENT)
                 
